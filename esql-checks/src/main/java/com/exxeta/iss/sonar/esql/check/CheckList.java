@@ -1,6 +1,15 @@
 /*
+
+
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  * Sonar ESQL Plugin
- * Copyright (C) 2013-2017 Thomas Pohl and EXXETA AG
+ * Copyright (C) 2013-2018 Thomas Pohl and EXXETA AG
  * http://www.exxeta.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +43,7 @@ public final class CheckList {
 
   public static List<Class> getChecks() {
     return ImmutableList.<Class> of(
-        CommentRegularExpressionCheck.class,
+    	CommentRegularExpressionCheck.class,
         ElseIfWithoutElseCheck.class,
         FileNameCheck.class,
         FunctionNameCheck.class,
@@ -85,10 +94,47 @@ public final class CheckList {
         TooManyParametersCheck.class,
         VariablesSubtreeCheck.class,
         XmlnscDomainCheck.class,
-        RoutineWithExcessiveReturnsCheck.class
+        RoutineWithExcessiveReturnsCheck.class,
+        SpaceAroundEqualSignCheck.class,
+        KeyWordCaseCheck.class,
+        CyclomaticComplexityCheck.class,
+        CaseStatementWithSingleWhenCheck.class,
+        EXTERNALVariableInitialisedCheck.class,
+        PassThruStatementCheck.class,
+        AvoidNestedIfCheck.class,
+        MeaningfulVariableCheck.class,
+        SubElementNameCheck.class,
+        FunctionProcedureLengthCheck.class,
+        FilterNodeModifyMessageCheck.class,
+        FilterNodeHaveOnlyOneReturnCheck.class,
+        MessageDomainNotvalidCheck.class,
+        NavigatingTreeCouldBeReferenceCheck.class,
+        UnusedVariableCheck.class,
+        DepricatedMethodCheck.class,
+        ProcessInvokingItselfCheck.class,
+        BinaryOperatorSepratedBySpaceCheck.class,
+        InsertBlankLineBetweenFuncProcCheck.class,
+        BlankLineBeforeCommentsCheck.class,
+        BlankSpaceAfterCommaCheck.class,
+        FunctionCommentsCheck.class,
+        ProcedureCommentsCheck.class,        
+        FileHeaderCommentsCheck.class,
+        PropagateConsistencyCheck.class
+       
+        
+        
+        ,UnreachableCodeCheck.class
+        ,CommentedCodeCheck.class
+        ,SelfAssignmentCheck.class
+        
+       
+        
+      
+       
+        
         
         /*
-        
+        The process is invoking itself. This may be a circular reference(SI)
  Backlog       
         
 - Use the SOAP domain not soap in the xmlnsc domain
