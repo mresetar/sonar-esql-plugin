@@ -50,10 +50,12 @@ public class PropagateConsistencyCheck extends DoubleDispatchVisitorCheck {
 		String moduleName = tree.moduleName().name();
 		EsqlFile esqlFile = getContext().getEsqlFile();
 		boolean parentFound = false;
+		System.out.println(esqlFile.relativePath());
 		File parentFile = new File(esqlFile.relativePath());
 		while(!parentFound) {
-			parentFile = parentFile.getParentFile();
-			if(parentFile.getName().matches("^[a-zA-Z]*(_App_v|_Lib_v)[0-9]")) {
+			parentFile = parentFile.getAbsoluteFile().getParentFile();
+			System.out.println("Parent file: " + parentFile + "Absolute file: " + parentFile.getAbsolutePath());			
+			if(parentFile.getName().matches("^[a-zA-Z]*(_App_v|_Lib_v)[0-9]") || new File(parentFile, ".project").exists()) {
 				parentFound = true;
 				parentFile = parentFile.getParentFile();
 			}
