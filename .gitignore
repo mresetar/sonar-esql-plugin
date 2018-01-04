@@ -16,3 +16,4 @@ esql-frontend/.project
 .settings/
 .classpath
 .project
+*/target/
